@@ -5,6 +5,18 @@ go 1.26.3
 replace (
 	// Should not be updated to 0.2.6 due to a bug (https://github.com/jfrog/jfrog-cli-core/pull/372)
 	github.com/c-bata/go-prompt => github.com/c-bata/go-prompt v0.2.5
+
+	// TEMPORARY JGC-473 cross-repo coordination — REMOVE all 4 replaces below before merge.
+	// Each entry points at the in-flight JGC-473 branch of the respective repo
+	// (jfrog-cli-core on the org's JGC-473-devbase; the four plugin repos on the
+	// developer's fork). Once each repo's JGC-473 PR merges to its base branch,
+	// the umbrella's require pinning that publishes from the merged commit is
+	// sufficient and these replaces must be removed.
+	github.com/jfrog/jfrog-cli-application => github.com/ehl-jf/jfrog-cli-application v0.0.0-20260521142732-e69fb616d92f
+	github.com/jfrog/jfrog-cli-artifactory => github.com/ehl-jf/jfrog-cli-artifactory v0.0.0-20260521142738-1785ceb4cf72
+	github.com/jfrog/jfrog-cli-core/v2 => github.com/jfrog/jfrog-cli-core/v2 v2.60.1-0.20260521114102-d507b5c64941
+	github.com/jfrog/jfrog-cli-evidence => github.com/ehl-jf/jfrog-cli-evidence v0.0.0-20260521142727-e5d88f0f6841
+	github.com/jfrog/jfrog-cli-security => github.com/ehl-jf/jfrog-cli-security v0.0.0-20260521142736-2e9680a7fc03
 	// Should not be updated to 0.2.0-beta.2 due to a bug (https://github.com/jfrog/jfrog-cli-core/pull/372)
 	github.com/pkg/term => github.com/pkg/term v1.1.0
 )
@@ -20,9 +32,9 @@ require (
 	github.com/jfrog/gofrog v1.7.6
 	github.com/jfrog/jfrog-cli-application v1.0.2-0.20260511133105-55a0ab56fd64
 	github.com/jfrog/jfrog-cli-artifactory v0.8.1-0.20260515045427-eb0cec44a4e2
-	github.com/jfrog/jfrog-cli-core/v2 v2.60.1-0.20260519160146-908527b450ff
+	github.com/jfrog/jfrog-cli-core/v2 v2.60.1-0.20260521114102-d507b5c64941
 	github.com/jfrog/jfrog-cli-evidence v0.9.4
-	github.com/jfrog/jfrog-cli-platform-services v1.10.1-0.20260430094150-ce7d9b371c6f
+	github.com/jfrog/jfrog-cli-platform-services v1.10.1-0.20260521142729-07c901b77823
 	github.com/jfrog/jfrog-cli-security v1.29.0
 	github.com/jfrog/jfrog-client-go v1.55.1-0.20260518073856-78c118beaa69
 	github.com/jszwec/csvutil v1.10.0
